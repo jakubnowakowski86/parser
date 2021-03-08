@@ -5,6 +5,11 @@ describe Parser do
   describe '#call' do
     subject { instance.call }
 
-    it { is_expected.to eq log_file_name }
+    it { expect { subject }.not_to raise_error(StandardError) }
+
+    context 'but the given argument was not a string' do
+      let(:log_file_name) { nil }
+      it { expect { subject }.to raise_error(StandardError) }
+    end
   end
 end
