@@ -1,10 +1,11 @@
 describe Parser do
-  let(:instance) { described_class.new(log_file_name, log_reader) }
+  let(:instance) { described_class.new(log_reader: log_reader, log_grouper: log_grouper) }
   let(:log_file_name) { 'webserver.log' }
   let(:log_reader) { double :log_reader }
+  let(:log_grouper) { double :log_grouper}
 
   describe '#call' do
-    subject { instance.call }
+    subject { instance.call(log_file_name) }
 
     before { allow(log_reader).to receive(:call).with(log_file_name) }
 
