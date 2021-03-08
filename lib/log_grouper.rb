@@ -1,7 +1,7 @@
 class LogGrouper
   def call(logs, options = {})
     prepared_options = prepare_options(options)
-    collection = Hash.new { |hash, key| hash[key] = []}
+    collection = Hash.new { |hash, key| hash[key] = [] }
     logs.each do |log|
       split_log = log.split(' ')
       key = split_log.delete(split_log[prepared_options[:group_by_column]])

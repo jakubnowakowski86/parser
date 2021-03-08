@@ -24,7 +24,7 @@ describe LogReader do
     context 'but the file_name is wrong' do
       let(:file_name) { 'path_to_non_existing_file.log' }
 
-      it { expect { subject }.to output("Something went wrong...\n").to_stderr}
+      it { expect { subject }.to output("Something went wrong...\n").to_stderr }
     end
   end
 end

@@ -1,5 +1,8 @@
 describe LogMain do
-  let(:instance) { described_class.new(log_reader: log_reader, log_grouper: log_grouper, log_sorter: log_sorter, log_output: log_output) }
+  let(:instance) do
+    described_class.new(log_reader: log_reader, log_grouper: log_grouper, log_sorter: log_sorter,
+                        log_output: log_output)
+  end
   let(:log_file_name) { 'webserver.log' }
   let(:log_reader) { double :log_reader }
   let(:log_grouper) { double :log_grouper }

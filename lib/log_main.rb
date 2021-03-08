@@ -26,7 +26,8 @@ class LogMain
     ### most page views
     grouped_most_page_views = log_grouper.call(logs, group_by_column: 0, uniqueness: false)
     sorted_most_page_views = log_sorter.call(grouped_most_page_views, direction: :asc, sort_by_column: 1)
-    log_output.call(sorted_most_page_views, 'list of webpages with most page views ordered from most pages views to less page views e.g.:')
+    log_output.call(sorted_most_page_views,
+                    'list of webpages with most page views ordered from most pages views to less page views e.g.:')
 
     ### most unique page views
     grouped_most_unique_page_views = log_grouper.call(logs, group_by_column: 0, uniqueness: true)

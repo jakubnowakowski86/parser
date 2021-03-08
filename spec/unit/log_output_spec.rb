@@ -6,10 +6,10 @@ describe LogOutput do
 
     let(:logs) do
       [
-        ["/index", ["111.111", "222.222", "333.333", "444.444"]],
-        ["/about", ["111.111", "222.222"]],
-        ["/contact", ["111.111"]],
-        ["/home", ["111.111"]]
+        ['/index', ['111.111', '222.222', '333.333', '444.444']],
+        ['/about', ['111.111', '222.222']],
+        ['/contact', ['111.111']],
+        ['/home', ['111.111']]
       ]
     end
     let(:header) { 'list of webpages with most page views ordered from most pages views to less page views e.g.:' }
@@ -23,6 +23,6 @@ describe LogOutput do
       MESSAGE
     end
 
-    it { expect { subject }.to output(expected_result).to_stdout  }
+    it { expect { subject }.to output(expected_result).to_stdout }
   end
 end
